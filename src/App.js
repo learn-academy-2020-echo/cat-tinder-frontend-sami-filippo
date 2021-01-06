@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import mockCats from './mockCats.js'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      cats: mockCats
+    }
+  }
+  render(){
+    return (
+      <div>
+        <Home />
+        <div>
+        <Header />
+        <Footer />
+        <NotFound />
+      </div>
     </div>
-  );
+    )
+  }
 }
 
-export default App;
+
+export default App
