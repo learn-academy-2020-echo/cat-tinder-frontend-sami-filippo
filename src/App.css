@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.mr-auto {
+
+  font-size: 70px;
+
+}
+
+
+.homeh1 {
+
+  color: aquamarine;
+  background-color: black;
+  font-size: 140px;
+  text-align: center;
+}
+
+#navbarid {
+
+  color: whitesmoke;
+  font-size: 70px;
+
+}
+
+.header {
+
+  font-size: 70px;
+  background-color: rgb(190, 16, 97);
+  color:white;
+  }
+
+
+
+.footer {
+
+  font-size: 50px;
+  background-color: rgb(190, 16, 97);
+  color:white;
+  
+  text-align: center;
+}

@@ -5,6 +5,15 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import CatIndex from './pages/CatIndex'
+import CatEdit from './pages/CatEdit'
+import CatShow from './pages/CatShow'
+import CatNew from './pages/CatNew'
+
+
+
 
 class App extends Component{
   constructor(props){
@@ -16,13 +25,21 @@ class App extends Component{
   render(){
     return (
       <div>
-        <Home />
-        <div>
         <Header />
-        <Footer />
-        <NotFound />
+        <Router>
+    <Switch>
+        <Route exact path="/" component={ Home } />
+        <Route path="/catindex" component={ CatIndex } />
+        <Route path="/catshow/:id" component={ CatShow } />
+        <Route path="/catnew" component={ CatNew } />
+        <Route path="/catedit/:id" component={ CatEdit } />
+        <Route component={ NotFound }/>
+      </Switch>
+    </Router>
+
+    <Footer/>
       </div>
-    </div>
+    
     )
   }
 }

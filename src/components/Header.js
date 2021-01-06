@@ -1,20 +1,44 @@
-import React, { Component } from 'react'
-import { Jumbotron, Container } from 'reactstrap';
+
+import React, { useState } from 'react';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+
+import '../App.css'
 
 
-class Header extends Component {
-    render() {
-        return (
-        <div>
-            <Jumbotron fluid>
-                <Container fluid>
-                <h1 className="display-3">Fluid jumbotron</h1>
-                <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                </Container>
-            </Jumbotron>            
-        </div>
-        )
-    }
+
+
+const Header = (props) => {
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleNavbar = () => setCollapsed(!collapsed);
+
+  return (
+    <div className='header' > 
+    
+      <Navbar color="faded" light>
+        <NavbarBrand id="navbarid" href="/" >TinderCat</NavbarBrand>
+        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+        <Collapse isOpen={!collapsed} navbar>
+          <Nav navbar>
+
+            <NavItem>
+              <NavLink href="./CatNew">Create a Cat</NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink href="./CatIndex">All Cats</NavLink>
+            </NavItem>
+
+
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap"> Ext</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+
+    </div>
+  );
 }
 
 export default Header

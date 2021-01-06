@@ -1,57 +1,18 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 
-// class Home extends Component {
-//     render() {
-//         return (
-//     <div>
-//       <Navbar color="faded" light>
-//         <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
-//         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-//         <Collapse isOpen={!collapsed} navbar>
-//           <Nav navbar>
-//             <NavItem>
-//               <NavLink href="/components/">Components</NavLink>
-//             </NavItem>
-//             <NavItem>
-//               <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-//             </NavItem>
-//           </Nav>
-//         </Collapse>
-//       </Navbar>
-//     </div>           
-//         );
-//     }
-// }
-
-// export default Home;
-
-import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-
-const Home = (props) => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleNavbar = () => setCollapsed(!collapsed);
-
-  return (
+class Home extends Component {
+    render() {
+        return (
     <div>
-      <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
+
+      <h1 className='homeh1'>This is home</h1>
+    </div>           
+        );
+    }
 }
 
 export default Home;
+
+
+
 
