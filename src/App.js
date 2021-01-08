@@ -12,6 +12,7 @@ import CatEdit from './pages/CatEdit'
 import CatShow from './pages/CatShow'
 import CatNew from './pages/CatNew'
 
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -53,9 +54,10 @@ class App extends Component{
         <Route path="/catedit/:id" component={ CatEdit } />
         <Route component={ NotFound }/>
       </Switch>
+      
     </Router>
 
-    {/* <Footer /> */}
+    <Footer />
       </div>
     
     )

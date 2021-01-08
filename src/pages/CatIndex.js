@@ -25,7 +25,6 @@ class CatIndex extends Component {
                 </Card>
               )
             })}
-          <Footer />
           </Col>
         );
     }

@@ -37,7 +37,7 @@ const Header = (props) => {
         </Collapse>
       </Navbar>
 
-      <p>Hello</p>
+      {/* <p>Hello</p> */}
 
     </div>
   );
