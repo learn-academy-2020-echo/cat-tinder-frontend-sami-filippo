@@ -22,17 +22,13 @@ const Header = (props) => {
           <Nav navbar>
 
             <NavItem>
-              <NavLink href="./CatNew">Create a Cat</NavLink>
+              <NavLink href="/CatNew">Create a Cat</NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink href="./CatIndex">All Cats</NavLink>
+              <NavLink href="/CatIndex">All Cats</NavLink>
             </NavItem>
 
-
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap"> Ext</NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

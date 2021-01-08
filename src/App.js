@@ -29,6 +29,11 @@ class App extends Component{
     console.log(newcat)
   }
 
+  updateCat = (cat, id) => {
+    console.log("cat:", cat)
+    console.log("id:", id)
+  }
+
 
   render(){
     return (
@@ -36,11 +41,20 @@ class App extends Component{
         <Header />
         <Router>
     <Switch>
+
+        {/* ------------HOME ROUTE---------------- */}
+
         <Route exact path="/" component={ Home } />
 
+      
+       {/* ------------INDEX ROUTE---------------- */}
 
         {/* <Route path="/catindex" component={ CatIndex } /> */}
         <Route path="/catindex" render={ (props) => <CatIndex cats={ this.state.cats } /> } />
+
+
+
+        {/* ------------SHOW ROUTE---------------- */}
 
         {/* <Route path="/catshow/:id" component={ CatShow } /> */}
         <Route
@@ -56,6 +70,7 @@ class App extends Component{
                }}
         />
 
+        {/* ------------NEW ROUTE---------------- */}
 
         {/* <Route path="/catnew" component={ CatNew } /> */}
 
@@ -65,11 +80,29 @@ class App extends Component{
         />
 
 
-        <Route path="/catedit/:id" component={ CatEdit } />
+        {/* ------------EDIT ROUTE---------------- */}
+        {/* <Route path="/catedit/:id" component={ CatEdit } /> */}
+        <Route
+            exact path={"/catedit/:id"}
+            render={ (props) => {
+              let id = props.match.params.id
+              let cat = this.state.cats.find(cat => cat.id === parseInt(id))
+              return(
+                <CatEdit
+                  updateCat={ this.updateCat }
+                  cat={ cat }
+                />
+              )
+           }}
+        />
+
+
+        {/* ------------NOTFOUND ROUTE---------------- */}
+
         <Route component={ NotFound }/>
 
       </Switch>
-      
+
     </Router>
 
     <Footer />

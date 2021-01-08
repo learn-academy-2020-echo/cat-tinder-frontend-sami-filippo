@@ -88,7 +88,7 @@ class CatNew extends Component {
                 </Button>
 
                 
-                // JavaScript code at the bottom of the JSX that will redirect when success is true
+                {/* // JavaScript code at the bottom of the JSX that will redirect when success is true */}
                 { this.state.success && <Redirect to="/catindex" />}
 
 
