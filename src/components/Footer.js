@@ -4,8 +4,9 @@ import React, { Component } from 'react'
 class Footer extends Component {
     render() {
         return (
-            <div >
-                <h1 className='footer'> <a href="/">Tinder Cat | Sami & Filippo 2021</a> </h1>
+            <div className='footer' >
+                <h3 className = "homeFooter"> <a href="/">Home </a></h3>
+                <h3> |Sami & Filippo 2021</h3>
                 {/* <h3 className='footer'>Tinder Cat | Sami & Filippo 2021</h3> */}
 
                 

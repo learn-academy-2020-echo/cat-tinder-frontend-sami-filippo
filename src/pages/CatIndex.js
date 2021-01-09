@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 class CatIndex extends Component {
     render() {
         return (
-            <Col sm="6">
+            <Col sm="6" className="catIndexCol">
             { this.props.cats.map((cat, index) => {
               return (
                 <Card body key={ index }>
