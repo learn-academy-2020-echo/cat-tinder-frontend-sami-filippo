@@ -41,13 +41,13 @@ class CatNew extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className = "cat-edit">
                
 
                <Form>
 
                     <FormGroup>
-                    <Label>Name</Label>
+                    <Label id= "label">Name</Label>
                     <Input
                     type="text"
                     name="name"
@@ -57,7 +57,7 @@ class CatNew extends Component {
                     </FormGroup>
 
                     <FormGroup>
-                    <Label>Age</Label>
+                    <Label id= "label">Age</Label>
                     <Input
                     type="number"
                     name="age"
@@ -67,7 +67,7 @@ class CatNew extends Component {
                     </FormGroup>
 
                     <FormGroup>
-                    <Label>Enjoys</Label>
+                    <Label id= "label">Enjoys</Label>
                     <Input
                     type="text"
                     name="enjoys"
@@ -79,7 +79,9 @@ class CatNew extends Component {
                     
                 </Form>
 
-                <Button
+                
+
+                <Button 
                 name="submit"
                 color="secondary"
                 onClick={ this.handleSubmit }
@@ -92,7 +94,7 @@ class CatNew extends Component {
                 { this.state.success && <Redirect to="/catindex" />}
 
 
-            </React.Fragment>
+            </div>
         );
     }
 }

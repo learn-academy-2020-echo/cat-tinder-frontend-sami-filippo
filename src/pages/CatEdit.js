@@ -39,10 +39,10 @@ class CatEdit extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className = "cat-edit">
                 <Form>
                 <FormGroup>
-                    <Label>Name</Label>
+                    <Label id= "label">Name</Label>
                     <Input
                     type="text"
                     name="name"
@@ -51,7 +51,7 @@ class CatEdit extends Component {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Age</Label>
+                    <Label id= "label">Age</Label>
                     <Input
                     type="number"
                     name="age"
@@ -60,7 +60,7 @@ class CatEdit extends Component {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Enjoys</Label>
+                    <Label id= "label">Enjoys</Label>
                     <Input
                     type="text"
                     name="enjoys"
@@ -80,7 +80,7 @@ class CatEdit extends Component {
 
              { this.state.success && <Redirect to={ `/catshow/${this.props.cat.id}` }/> }
 
-         </React.Fragment>
+         </div>
         );
     }
 }

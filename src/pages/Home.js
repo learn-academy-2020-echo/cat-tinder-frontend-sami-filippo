@@ -8,8 +8,7 @@ class Home extends Component {
     <div className = "bg">
 
       {/* <h1 className='homeh1'>This is home</h1> */}
-      {/* <img className="" src ={ cathome } /> */}
-
+      <img src ={ cathome } />
 
     </div>           
         );

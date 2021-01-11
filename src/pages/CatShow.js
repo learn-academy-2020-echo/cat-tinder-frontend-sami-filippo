@@ -7,7 +7,7 @@ class CatShow extends Component {
     render() {
         let {cat} = this.props
         return(
-            <Col sm="6" id="show-body">
+            <Col className = "cat-edit">
             <Card body >
               <CardTitle>Hi, my name is { cat.name }!</CardTitle>
               <CardText>I am { cat.age } years old. I enjoy { this.props.cat.enjoys }.</CardText>

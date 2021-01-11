@@ -36,6 +36,24 @@ let cats = [
         name: "Messi",
         age: 3,
         enjoys: "pro soccer player"
+    },
+    {
+        id: 7,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 8,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 9,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
     }
 ]
 
