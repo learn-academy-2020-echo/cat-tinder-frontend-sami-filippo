@@ -53,7 +53,10 @@ class CatIndex extends Component {
                 
                 <ListGroupItemText>Enjoys: { cat.enjoys } </ListGroupItemText>
 
-                <NavLink to={`/catshow/${cat.id}`}>More info!</NavLink>
+                
+
+
+                <NavLink to={`/catshow/${cat.id}`}><img src={cat.pic} width="250" height="250"></img> </NavLink>
               </div>
               
             </ListGroup>

@@ -20,19 +20,106 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      cats: cats
+      cats: []
     }
   }
 
+  componentDidMount(){
+    this.catIndex()
+  }
+  
+  catIndex = () => {
+    fetch("http://localhost:3000/cats")
+    .then(response => {
+      return response.json()
+    })
+    .then(catsArray => {
+      // set the state with the data from the backend into the empty array
+      this.setState({ cats: catsArray })
+    })
+    .catch(errors => {
+      console.log("index errors:", errors)
+    })
+  }
 
   createNewCat = (newcat) => {
-    console.log(newcat)
+    return fetch("http://localhost:3000/cats", {
+      // converting an object to a string
+      body: JSON.stringify(newcat),
+      // specify the info being sent in JSON and the info returning should be JSON
+      headers: {
+        "Content-Type": "application/json"
+      },
+      // HTTP verb so the correct endpoint is invoked on the server
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Please check your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
   }
 
   updateCat = (cat, id) => {
-    console.log("cat:", cat)
-    console.log("id:", id)
+    return fetch(`http://localhost:3000/cats/${id}`, {
+      // converting an object to a string
+      body: JSON.stringify(cat),
+      // specify the info being sent in JSON and the info returning should be JSON
+      headers: {
+        "Content-Type": "application/json"
+      },
+      // HTTP verb so the correct endpoint is invoked on the server
+      method: "PATCH"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Please check your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("update errors:", errors)
+    })
   }
+
+  deleteCat = (id) => {
+    return fetch(`http://localhost:3000/cats/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      // this.catIndex()
+      return response.json()
+    })
+    // .then(payload =>{
+    //   this.catIndex()
+    // })
+    .catch(errors => {
+      console.log("delete errors:", errors)
+    })
+  }
+
+
+  // createNewCat = (newcat) => {
+  //   console.log(newcat)
+  // }
+
+  // updateCat = (cat, id) => {
+  //   console.log("cat:", cat)
+  //   console.log("id:", id)
+  // }
 
 
   render(){
@@ -65,6 +152,7 @@ class App extends Component{
             return (
               <CatShow
                 cat={ cat }
+                deleteCat={ this.deleteCat}
               />
                     )
                }}
@@ -95,8 +183,7 @@ class App extends Component{
               )
            }}
         />
-
-
+          
         {/* ------------NOTFOUND ROUTE---------------- */}
 
         <Route component={ NotFound }/>

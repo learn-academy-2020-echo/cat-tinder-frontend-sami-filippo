@@ -13,7 +13,8 @@ class CatNew extends Component {
           form:{
             name: "",
             age: "",
-            enjoys: ""
+            enjoys: "",
+            pic:""
           },
 
           success: false
@@ -73,6 +74,16 @@ class CatNew extends Component {
                     name="enjoys"
                     onChange={ this.handleChange }
                     value={ this.state.form.enjoys }
+                    />
+                    </FormGroup>
+
+                    <FormGroup>
+                    <Label id= "label">Picture URL</Label>
+                    <Input
+                    type="text"
+                    name="pic"
+                    onChange={ this.handleChange }
+                    value={ this.state.form.pic }
                     />
                     </FormGroup>
 

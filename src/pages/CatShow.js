@@ -9,16 +9,36 @@ class CatShow extends Component {
         return(
             <Col className = "cat-edit">
             <Card body >
-              <CardTitle>Hi, my name is { cat.name }!</CardTitle>
-              <CardText>I am { cat.age } years old. I enjoy { this.props.cat.enjoys }.</CardText>
+              <CardTitle>Hi, I'm { cat.name }!</CardTitle>
+              <CardText>I am { cat.age } years old and I enjoy { this.props.cat.enjoys }.
+              </CardText>
+
+              <CardText><center>
+                <img src={cat.pic} width="300" height="300"></img>
+              </center>
+              </CardText>
+
+              
+              
             </Card>
 
+            <br/>
               <NavLink
                 to={`/catedit/${this.props.cat.id}`}
               >
                 <Button color="secondary">
-                  Edit Cat Profile
+                  Edit Profile 
                 </Button>
+              </NavLink>
+            <br/>
+              <NavLink
+                  to={"/catindex"}
+                >
+                  <Button 
+                  color="secondary" 
+                  onClick = { () => this.props.deleteCat(this.props.cat.id) }>
+                    😭Delete😭
+                  </Button>
               </NavLink>
 
           </Col>

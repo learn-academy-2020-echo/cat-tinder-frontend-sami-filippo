@@ -12,7 +12,8 @@ class CatEdit extends Component {
           form:{
             name: "",
             age: "",
-            enjoys: ""
+            enjoys: "",
+            pic:""
           },
           success: false
         }
@@ -25,7 +26,7 @@ class CatEdit extends Component {
         form[e.target.name] = e.target.value
         // setting state to the updated form
         this.setState({ form: form })
-      }
+      } 
 
       handleSubmit = (e) => {
         // keeps react from refreshing the page unnecessarily
@@ -66,6 +67,15 @@ class CatEdit extends Component {
                     name="enjoys"
                     onChange={ this.handleChange }
                     value={ this.state.form.enjoys }
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label id= "label">Picture URL</Label>
+                    <Input
+                    type="text"
+                    name="pic"
+                    onChange={ this.handleChange }
+                    value={ this.state.form.pic }
                     />
                 </FormGroup>
                 </Form>    
