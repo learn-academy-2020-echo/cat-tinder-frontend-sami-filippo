@@ -1,0 +1,60 @@
+
+let cats = [
+    {
+        id: 1,
+        name: "Sami",
+        age: 5,
+        enjoys: "Soccer"
+
+    },
+    {
+        id: 2,
+        name: "Filippo",
+        age: 4, 
+        enjoys: "Coding"
+    },
+    {
+        id: 3,
+        name: "Ribery",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 4,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 5,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 6,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 7,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 8,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    },
+    {
+        id: 9,
+        name: "Messi",
+        age: 3,
+        enjoys: "pro soccer player"
+    }
+]
+
+export default cats
